@@ -1,25 +1,29 @@
 # TPU Utils
 tpu-info
 # Tensorflow packages
-tensorflow-tpu==${TENSORFLOW_VERSION}
---find-links https://storage.googleapis.com/libtpu-tf-releases/index.html
+# TODO: b/447621961 - re-enable tensorflow-tpu when a compatible libtpu can be found.
+tensorflow-cpu==${TENSORFLOW_VERSION}
 tensorflow_hub
 tensorflow-io
 tensorflow-probability
+tensorflow_datasets
 # Torch packages
 torch==${TORCH_VERSION}
-https://storage.googleapis.com/pytorch-xla-releases/wheels/tpuvm/torch_xla-${TORCH_VERSION}+libtpu-${PYTHON_WHEEL_VERSION}-${PYTHON_WHEEL_VERSION}-${TORCH_LINUX_WHEEL_VERSION}.whl
+https://storage.googleapis.com/pytorch-xla-releases/wheels/tpuvm/torch_xla-${TORCH_VERSION}-${PYTHON_WHEEL_VERSION}-${PYTHON_WHEEL_VERSION}-${TORCH_LINUX_WHEEL_VERSION}.whl
 torchaudio==${TORCHAUDIO_VERSION}
 torchvision==${TORCHVISION_VERSION}
 # Jax packages
-jax[tpu]>=0.4.34
---find-links https://storage.googleapis.com/jax-releases/libtpu_releases.html
+jax[tpu]
 distrax
 flax
 git+https://github.com/deepmind/dm-haiku
 jraph
 optax
 trax
+# Tunix GRPO
+git+https://github.com/google/tunix
+git+https://github.com/google/qwix
+grain
 # Jupyter packages
 jupyter-lsp==1.5.1
 jupyterlab
@@ -38,6 +42,7 @@ albumentations
 diffusers
 einops
 fastparquet
+ipywidgets
 matplotlib
 opencv-python
 opencv-python-headless
